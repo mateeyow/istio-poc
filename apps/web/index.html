@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello!</title>
+</head>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id='response' />
+    <script>
+      const respDOM = document.getElementById('response')
+      const pNode = document.createElement('p')
+
+      const appendText = (text) => {
+        const textNode = document.createTextNode(text)
+        pNode.appendChild(textNode)
+        respDOM.appendChild(pNode)
+      }
+
+      fetch(`http://${location.hostname}/admin-api`)
+        .then(response => {
+          if (response.ok) {
+            appendText('Success')
+          } else {
+            appendText('Non-200 response')
+          }
+        })
+        .catch(() => {
+          appendText('Error!')
+        })
+    </script>
+</body>
+
+</html>
