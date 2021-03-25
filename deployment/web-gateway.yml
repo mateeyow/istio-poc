@@ -11,7 +11,7 @@ spec:
       name: http
       protocol: HTTP
     hosts:
-    - "istioweb.rapiscan.systems"
+    - "*.rapiscan.systems"
     tls:
       httpsRedirect: true 
   - port:
@@ -22,4 +22,4 @@ spec:
       mode: SIMPLE
       credentialName: rapiscan-tls
     hosts:
-    - "istioweb.rapiscan.systems"
+    - "*.rapiscan.systems"
