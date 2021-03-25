@@ -1,0 +1,26 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: web-vs
+spec:
+  hosts:
+  - "istioweb.rapiscan.systems"
+  gateways:
+  - web-gw
+  http:
+  - match:
+    - uri:
+        exact: /admin-api
+    route:
+    - destination:
+        host: admin-api
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        host: web
+      weight: 50
+    - destination:
+        host: web-v2
+      weight: 50

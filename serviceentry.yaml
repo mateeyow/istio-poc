@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1beta1
+kind: ServiceEntry
+metadata:
+  name: external-auto
+spec:
+  hosts:
+  - istioweb.rapiscan.systems
+  ports:
+  - name: http
+    number: 80
+    protocol: HTTP
+  resolution: STATIC
+  workloadSelector:
+    labels:
+      app: web
+  

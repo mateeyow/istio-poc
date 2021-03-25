@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: auth-api
-        image: mateeyow/istiopoc-auth-api:v1
+        image: mateeyow/istiopoc-auth-api:v2
         imagePullPolicy: IfNotPresent
         resources:
           limits:

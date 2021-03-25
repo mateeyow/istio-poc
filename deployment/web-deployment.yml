@@ -12,6 +12,7 @@ spec:
       labels:
         app: web
     spec:
+      serviceAccountName: httpbin
       containers:
       - name: web
         image: mateeyow/istiopoc-web:v1
